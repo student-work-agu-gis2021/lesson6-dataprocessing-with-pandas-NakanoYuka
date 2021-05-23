@@ -18,13 +18,8 @@ data = None
 
 # YOUR CODE HERE 1
 #read data and Skip the second row andConvert the no-data values (-9999) into NaN
-fp = r'data/1091402.txt'
-data = pd.read_csv(fp, delim_whitespace=True, skiprows=2, na_values=['-9999'])
-i=np.array(data)
-data=np.insert(i,0,['STATION','ELEVATION','LATTITUDE','LONGTUDE','DATE','PRCP','TAVG','TMAX','TMIN'], axis=0)
-data=pd.DataFrame(data)
-data=data.rename(columns=data.iloc[0])
-data=data.drop(data.index[0])
+fp = "data/1091402.txt"
+data = pd.read_csv(fp, delim_whitespace=True, skiprows=[1], na_values=['-9999'])
 print(data.head())
 print(data.tail())
 # ### Part 2 
@@ -118,7 +113,7 @@ print('Average temperature (F) for the whole dataset:', round(avg_temp, 2))
 avg_temp_1969 = None
 
 # YOUR CODE HERE 8
-
+#Find the average TMAX temperature over the Summer of 1969 (months May, June, July, and August of the year 1969)
 #CAUTION!!! DON'T EDIT THIS PART START
 # This test print should print a number
 print('Average temperature (F) for the Summer of 69:', round(avg_temp_1969, 2))
