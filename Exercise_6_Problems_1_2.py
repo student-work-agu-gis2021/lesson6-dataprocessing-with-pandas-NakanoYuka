@@ -90,6 +90,8 @@ print('Date of the first observation:',first_obs)
 last_obs = None
 
 # YOUR CODE HERE 6
+#Find the date of the most recent (last) observation
+last_obs=max(data['DATE'])
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print('Date of the last observation:', last_obs)
@@ -102,7 +104,8 @@ print('Date of the last observation:', last_obs)
 avg_temp = None
 
 # YOUR CODE HERE 7
-
+#Find the average temperature for the whole data file (all observtions) from column TAVG
+avg_temp=data['TAVG'].mean()
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print('Average temperature (F) for the whole dataset:', round(avg_temp, 2))
