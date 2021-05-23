@@ -17,7 +17,16 @@ import numpy as np
 data = None
 
 # YOUR CODE HERE 1
-
+#read data and Skip the second row andConvert the no-data values (-9999) into NaN
+fp = r'data/1091402.txt'
+data = pd.read_csv(fp, delim_whitespace=True, skiprows=2, na_values=['-9999'])
+i=np.array(data)
+data=np.insert(i,0,['STATION','ELEVATION','LATTITUDE','LONGTUDE','DATE','PRCP','TAVG','TMAX','TMIN'], axis=0)
+data=pd.DataFrame(data)
+data=data.rename(columns=data.iloc[0])
+data=data.drop(data.index[0])
+print(data.head())
+print(data.tail())
 # ### Part 2 
 # 
 # In this section, you will calculate simple statistics based on the input data:
